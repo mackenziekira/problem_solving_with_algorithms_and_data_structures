@@ -173,6 +173,15 @@ def evaluate(pt):
 
 print evaluate(pt)
 
+# preorder traversal
+def preorder(tree):
+    if tree:
+        print(tree)
+        preorder(tree.left_child)
+        preorder(tree.right_child)
+        
+preorder(pt)
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
