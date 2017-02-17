@@ -185,7 +185,14 @@ def postorder(tree):
         postorder(tree.left_child)
         postorder(tree.right_child)
         print(tree)
-postorder(pt)
+
+def inorder(tree):
+    if tree is not None:
+        inorder(tree.left_child)
+        print tree
+        inorder(tree.right_child)
+
+inorder(pt)
 
 if __name__ == "__main__":
     import doctest
