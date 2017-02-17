@@ -56,6 +56,9 @@ class BinaryTree(object):
         self.left_child = None
         self.right_child = None
 
+    def __repr__(self):
+        return self.key
+
     def insertLeft(self, new_node):
         if self.left_child is None:
             self.left_child = BinaryTree(new_node)
@@ -71,6 +74,32 @@ class BinaryTree(object):
             t = BinaryTree(new_node)
             t.right_child = self.right_child
             self.right_child = t
+
+    def get_right_child(self):
+        return self.right_child
+
+    def get_left_child(self):
+        return self.left_child
+
+    def set_root_val(self, obj):
+        self.key = obj
+
+    def get_root_val(self):
+        return self.key
+
+def buildTree():
+    """selfcheck from tree chapter, section 6.5
+
+    >>> t = buildTree()
+    'a'
+
+    >>> t.get_left_child()
+    'b'
+
+    >>> t.get_right_child()
+    'c'
+    """
+
 
 if __name__ == "__main__":
     import doctest
