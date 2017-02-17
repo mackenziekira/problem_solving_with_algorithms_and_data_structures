@@ -50,7 +50,27 @@ def buildTree():
 
 ################### SECTION 6.5 ######################
 
+class BinaryTree(object):
+    def __init__(self, root_object):
+        self.key = root_object
+        self.left_child = None
+        self.right_child = None
 
+    def insertLeft(self, new_node):
+        if self.left_child is None:
+            self.left_child = BinaryTree(new_node)
+        else:
+            t = BinaryTree(new_node)
+            t.left_child = self.left_child
+            self.left_child = t
+
+    def insertRight(self, new_node):
+        if self.right_child is None:
+            self.right_child = BinaryTree(new_node)
+        else:
+            t = BinaryTree(new_node)
+            t.right_child = self.right_child
+            self.right_child = t
 
 if __name__ == "__main__":
     import doctest
