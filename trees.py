@@ -160,7 +160,18 @@ def build_parse_tree(expression):
     return expression_tree
 
 pt = build_parse_tree("( ( 10 + 5 ) * 3 )")
-print pt
+
+import operator 
+def evaluate(pt):
+    if isinstance(pt.get_root_val(), int):
+        return pt.get_root_val()
+    opers = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv}
+    l = evaluate(pt.get_left_child())
+    r = evaluate(pt.get_right_child())
+    op = opers[pt.get_root_val()]
+    return op(l, r)
+
+print evaluate(pt)
 
 if __name__ == "__main__":
     import doctest
