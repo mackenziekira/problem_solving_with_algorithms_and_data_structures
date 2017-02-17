@@ -175,12 +175,17 @@ print evaluate(pt)
 
 # preorder traversal
 def preorder(tree):
-    if tree:
+    if tree is not None:
         print(tree)
         preorder(tree.left_child)
         preorder(tree.right_child)
-        
-preorder(pt)
+
+def postorder(tree):
+    if tree is not None:
+        postorder(tree.left_child)
+        postorder(tree.right_child)
+        print(tree)
+postorder(pt)
 
 if __name__ == "__main__":
     import doctest
