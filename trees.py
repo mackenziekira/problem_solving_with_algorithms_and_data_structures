@@ -1,3 +1,6 @@
+# TREE CHAPTER
+################### SECTION 6.4 ######################
+
 def BinaryTree(r):
     return [r, [], []]
 
@@ -44,6 +47,10 @@ def buildTree():
     insertLeft(r, 'e')
     insertRight(r, 'f')
     return x
+
+################### SECTION 6.5 ######################
+
+
 
 if __name__ == "__main__":
     import doctest
