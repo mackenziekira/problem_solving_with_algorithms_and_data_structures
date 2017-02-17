@@ -34,4 +34,17 @@ def buildTree():
     """selfcheck from tree chapter, Q26
 
     >>> print(buildTree())
-    [a, [b, [], [d, [], []]], [c, [e, [], []]], [f, [], []]]
+    ['a', ['b', [], ['d', [], []]], ['c', ['e', [], []], ['f', [], []]]]
+    """
+    x = BinaryTree('a')
+    insertLeft(x, 'b')
+    insertRight(getLeftChild(x), 'd')
+    insertRight(x, 'c')
+    r = getRightChild(x)
+    insertLeft(r, 'e')
+    insertRight(r, 'f')
+    return x
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
